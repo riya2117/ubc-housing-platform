@@ -3,16 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>StudentNest</title>
+    <meta name="description" content="Find student housing, rooms, and rentals easily.">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <header>
-        <h1>HOMEPAGE</h1>
-        <nav>
+        <img id="logo" src="{{ url_for('static', filename='logo.png') }}" alt="StudentNest Logo">
+        <h1 id="title">StudentNest</h1>
+        <nav aria-label="Main navigation" class="navbar">
             <a href="/">Home</a>
-            <a href="/listings">Listings</a>
+            <a href="/listings">Browse Listings</a>
             <a href="/create">Create Listing</a>
+            <a href="/profile">Profile</a>
         </nav>
     </header>
+
+    <main>
+        <h2>Find Student Housing Near UBC</h2>
+        <p>Browse verified sublets posted by students.</p>
+
+        <section class="search-filters">
+            <h2>Browse Listings by Filters</h2>
+            <form action="/listings" method="GET">
+
+                <!-- Preferred Residence -->
+                <select name="residence">
+                    <option value="">Select an option</option>
+                    <option value="thunderbird">Thunderbird</option>
+                    <option value="exchange">Exchange</option>
+                    <option value="any">Any</option>
+                </select>
+
+                <!-- Room Type -->
+                <select name="type">
+                    <option value="">Select an option</option>
+                    <option value="4-br">4 Bedroom</option>
+                    <option value="2-br">2 Bedroom</option>
+                    <option value="studio">Studio</option>
+                </select>
+
+                <!-- Move-in Date -->
+                <input type="date" name="move_in">
+
+                <!-- Move-out Date -->
+                <input type="date" name="move_out">
+
+                <!-- Rent Range -->
+                <select name="rent">
+                    <option value="">Select an option</option>
+                    <option value="1000">Under $1000</option>
+                    <option value="1500">Under $1500</option>
+                    <option value="2000">Under $2000</option>
+                </select>
+
+                <!-- Search Button -->
+                <button type="submit">Search</button>
+
+            </form>
+        </section>
+
+        <section class="features">
+            <h2>Why StudentNest?</h2>
+
+            <div class="feature-card">
+                <h3>Verified Listings</h3>
+                <p>All listings are checked for authenticity.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Easy Search</h3>
+                <p>Filter by rent, location, and move-in date.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Student Focused</h3>
+                <p>Built specifically for students and roommates.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-brand">
+            <h3>StudentNest</h3>
+            <p>Find student housing easily.</p>
+        </div>
+
+        <div class="footer-contact">
+            <h4>Contact Us</h4>
+            <p>Email: support@studentnest.com</p>
+            <p>Phone: +1 234 567 890</p>
+        </div>
+
+        <p class="copyright">&copy; 2024 StudentNest. All rights reserved.</p>
+    </footer>
 </body>
 </html>
