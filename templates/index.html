@@ -10,22 +10,25 @@
 </head>
 <body>
     <header>
-        <img id="logo" src="{{ url_for('static', filename='logo.png') }}" alt="StudentNest Logo">
-        <h1 id="title">StudentNest</h1>
         <nav aria-label="Main navigation" class="navbar">
-            <a href="/">Home</a>
-            <a href="/listings">Browse Listings</a>
-            <a href="/create">Create Listing</a>
-            <a href="/profile">Profile</a>
+            <div class="left-navbar">
+                <h1 id="title">StudentNest</h1>
+                <img id="logo" src="{{ url_for('static', filename='logo.png') }}" alt="StudentNest Logo">
+            </div>
+            <div class="right-navbar">
+                <a href="/">Home</a>
+                <a href="/listings">Browse Listings</a>
+                <a href="/create">Create Listing</a>
+                <a href="/profile">Profile</a>
+            </div>
         </nav>
     </header>
 
     <main>
-        <h2>Find Student Housing Near UBC</h2>
-        <p>Browse verified sublets posted by students.</p>
+        <h2 id="headline">Find Student Housing Within UBC</h2>
+        <p id="description">Browse verified sublets posted by students.</p>
 
         <section class="search-filters">
-            <h2>Browse Listings by Filters</h2>
             <form action="/listings" method="GET">
 
                 <!-- Preferred Residence -->
@@ -45,10 +48,10 @@
                 </select>
 
                 <!-- Move-in Date -->
-                <input type="date" name="move_in">
+                <input type="date" name="move_in" required>
 
                 <!-- Move-out Date -->
-                <input type="date" name="move_out">
+                <input type="date" name="move_out" required>
 
                 <!-- Rent Range -->
                 <select name="rent">
@@ -59,7 +62,11 @@
                 </select>
 
                 <!-- Search Button -->
-                <button type="submit">Search</button>
+                <button type="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                    </svg>
+                </button>
 
             </form>
         </section>
@@ -67,19 +74,21 @@
         <section class="features">
             <h2>Why StudentNest?</h2>
 
-            <div class="feature-card">
-                <h3>Verified Listings</h3>
-                <p>All listings are checked for authenticity.</p>
-            </div>
+            <div class="features-container">
+                <div class="feature-card">
+                    <h3>Verified Listings</h3>
+                    <p>All listings are checked for authenticity.</p>
+                </div>
 
-            <div class="feature-card">
-                <h3>Easy Search</h3>
-                <p>Filter by rent, location, and move-in date.</p>
-            </div>
+                <div class="feature-card">
+                    <h3>Easy Search</h3>
+                    <p>Filter by rent, location, and move-in date.</p>
+                </div>
 
-            <div class="feature-card">
-                <h3>Student Focused</h3>
-                <p>Built specifically for students and roommates.</p>
+                <div class="feature-card">
+                    <h3>Student Focused</h3>
+                    <p>Built specifically for students and roommates.</p>
+                </div>
             </div>
         </section>
     </main>
