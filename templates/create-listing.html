@@ -3,16 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Create Listing | StudentNest</title>
+    <meta name="description" content="Find student housing, rooms, and rentals easily.">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <header>
-        <h1>CREATE LISTING</h1>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/listings">Listings</a>
-            <a href="/create">Create Listing</a>
+        <nav aria-label="Main navigation" class="navbar">
+            <div class="left-navbar">
+                <h1 id="title">StudentNest</h1>
+                <img id="logo" src="{{ url_for('static', filename='logo.png') }}" alt="StudentNest Logo">
+            </div>
+            <div class="right-navbar">
+                <a href="/">Home</a>
+                <a href="/listings">Browse Listings</a>
+                <a href="/create">Create Listing</a>
+                <a href="/profile">Profile</a>
+            </div>
         </nav>
     </header>
+
+    <main>
+        <h2 id="headline">Create a New Listing</h2>
+        <p id="description">Fill out the details below to post your sublet.</p>
+        <form action="/listings" method="POST" id="create-form">
+            <label for="residence">Residence</label>
+            <select id="residence" name="residence" required>
+                <option value="" disabled selected>Select Residence</option>
+                <option value="thunderbird">Thunderbird</option>
+                <option value="exchange">Exchange</option>
+                <option value="marine">Marine Drive</option>
+                <option value="ponderosa">Ponderosa Commons</option>
+            </select>
+
+            <label for="room-type">Room Type</label>
+            <select id="room-type" name="room_type" required>
+                <option value="" disabled selected>Select Room Type</option>
+                <option value="nano-studio">Nano Studio</option>
+                <option value="studio">Studio</option>
+                <option value="1-bedroom">1 Bedroom</option>
+                <option value="2-bedroom">2 Bedroom</option>
+                <option value="4-bedroom">4 Bedroom</option>
+            </select>
+
+            <label for="gender-preference">Gender Preference</label>
+            <select id="gender-preference" name="gender_preference">
+                <option value="no-preference" selected>No Preference</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="rent">Monthly Rent ($)</label>
+            <input
+                type="number"
+                id="rent"
+                name="rent"
+                min="0"
+                placeholder="e.g. 1200"
+                required
+            >
+
+            <label for="move-in">Move-in Date</label>
+            <input type="date" id="move-in" name="move_in" required>
+
+            <label for="move-out">Move-out Date</label>
+            <input type="date" id="move-out" name="move_out" required>
+
+            <label for="listing-description">Description</label>
+            <textarea
+                id="listing-description"
+                name="listing_description"
+                rows="5"
+                placeholder="Describe your room, amenities, location, etc."
+                required
+            ></textarea>
+
+            <label for="contact-info">Contact Information</label>
+            <input
+                type="text"
+                id="contact-info"
+                name="contact_info"
+                placeholder="Email or phone number"
+                required
+            >
+
+            <button type="submit">Create Listing</button>
+        </form>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-brand">
+            <h3>StudentNest</h3>
+            <p>Find student housing easily.</p>
+        </div>
+
+        <div class="footer-contact">
+            <h4>Contact Us</h4>
+            <p>Email: support@studentnest.com</p>
+            <p>Phone: +1 234 567 890</p>
+        </div>
+
+        <p class="copyright">&copy; 2024 StudentNest. All rights reserved.</p>
+    </footer>
 </body>
 </html>
