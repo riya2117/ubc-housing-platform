@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listing Details | StudentNest</title>
+    <meta name="description" content="Find student housing, rooms, and rentals easily.">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav aria-label="Main navigation" class="navbar">
+            <div class="left-navbar">
+                <h1 id="title">StudentNest</h1>
+                <img id="logo" src="{{ url_for('static', filename='logo.png') }}" alt="StudentNest Logo">
+            </div>
+            <div class="right-navbar">
+                <a href="/">Home</a>
+                <a href="/listings">Browse Listings</a>
+                <a href="/create-listing">Create Listing</a>
+                <a href="/profile">Profile</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="listing-page">
+        <div class="listing-hero">
+            <h2>Thunderbird Residence</h2>
+            <p class="price"><strong>$1200/month</strong></p>
+        </div>
+
+        <div class="listing-image-large">
+            Image Placeholder
+        </div>
+
+        <div class="listing-info">
+
+            <div class="info-box">
+                <p><strong>Room Type:</strong> 4 Bedroom</p>
+                <p><strong>Gender Preference:</strong> Male Preferred</p>
+            </div>
+
+            <div class="info-box">
+                <p><strong>Move-in:</strong> May 1</p>
+                <p><strong>Move-out:</strong> August 31</p>
+            </div>
+
+        </div>
+
+        <div class="listing-description">
+            <h3>Description</h3>
+            <p>
+                Spacious room near UBC with great lighting and shared kitchen.
+                Close to bus stop and grocery stores.
+            </p>
+        </div>
+
+        <div class="contact-card">
+            <h3>Contact</h3>
+            <p>Email: student@example.com</p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-brand">
+            <h3>StudentNest</h3>
+            <p>Find student housing easily.</p>
+        </div>
+
+        <div class="footer-contact">
+            <h4>Contact Us</h4>
+            <p>Email: support@studentnest.com</p>
+            <p>Phone: +1 234 567 890</p>
+        </div>
+
+        <p class="copyright">&copy; 2024 StudentNest. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -10,9 +10,13 @@ def home():
 def listings():
     return render_template("listings.html")
 
-@app.route("/create")
-def create():
+@app.route("/create-listing")
+def create_listing():
     return render_template("create-listing.html")
+
+@app.route("/listing-details")
+def listing_details():
+    return render_template("listing-details.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
