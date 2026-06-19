@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Listing | StudentNest</title>
+    <meta name="description" content="Find student housing, rooms, and rentals easily.">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav aria-label="Main navigation" class="navbar">
+            <div class="left-navbar">
+                <h1 id="title">StudentNest</h1>
+                <img id="logo" src="{{ url_for('static', filename='logo.png') }}" alt="StudentNest Logo">
+            </div>
+            <div class="right-navbar">
+                <a href="/">Home</a>
+                <a href="/listings">Browse Listings</a>
+                <a href="/create-listing">Create Listing</a>
+                <a href="/profile">Profile</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="profile-header">
+            <div class="profile-avatar">
+                Profile Picture
+            </div>
+
+            <div class="profile-info">
+                <h2>Ronak Jain</h2>
+            </div>
+        </section>
+
+        <section class="my-listing">
+            <h3>My Listing</h3>
+            <div class="listings-container">
+                <a href="/listing-details" class="listing-card">
+                    <div class="listing-image">
+                        Image Placeholder
+                    </div>
+                    
+                    <div class="listing-content">
+                        <h3>Thunderbird Residence</h3>
+                        <p><strong>$1200/month</strong></p>
+                        <p>4 Bedroom</p>
+                        <p>Male Preferred</p>
+                        <p>May 1 - August 31</p>
+                        <div class="view-btn">View Details</div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="profile-actions">
+            <button>Edit Profile</button>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-brand">
+            <h3>StudentNest</h3>
+            <p>Find student housing easily.</p>
+        </div>
+
+        <div class="footer-contact">
+            <h4>Contact Us</h4>
+            <p>Email: support@studentnest.com</p>
+            <p>Phone: +1 234 567 890</p>
+        </div>
+
+        <p class="copyright">&copy; 2024 StudentNest. All rights reserved.</p>
+    </footer>
+</body>
+</html>
